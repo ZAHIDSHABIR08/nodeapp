@@ -1,5 +1,5 @@
 #!/bin/bash
 set -x
 cd /home/ubuntu/nodeapp
-pm2 delete cloudsync
-pm2 start npm --name cloudsync
+pm2 delete cloudsync-nodeapp
+pm2 start app.js --name cloudsync-nodeapp
