@@ -1,14 +1,27 @@
 version: 0.0
 os: linux
+
 files:
   - source: /
     destination: /home/ubuntu/nodeapp
+
 hooks:
   BeforeInstall:
     - location: scripts/deleteArtifacts.sh
       timeout: 500
       runas: root
+
+  Install:
+    - location: scripts/installDependencies.sh
+      timeout: 500
+      runas: root
+
   AfterInstall:
-    - location: scripts/script.sh
+    - location: scripts/installPM2.sh
+      timeout: 500
+      runas: root
+
+  ApplicationStart:
+    - location: scripts/startApp.sh
       timeout: 500
       runas: root

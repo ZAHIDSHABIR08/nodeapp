@@ -5,10 +5,11 @@ phases:
     commands:
       - echo "Installing dependencies"
       - npm install
+
   build:
     commands:
-      - echo "Running build"
-      - npm run build
+      - echo "No build process required"
+
   post_build:
     commands:
       - echo "Build phase complete"
@@ -16,4 +17,6 @@ phases:
 artifacts:
   files:
     - '**/*'
+
+
 
